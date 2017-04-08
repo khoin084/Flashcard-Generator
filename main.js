@@ -48,11 +48,13 @@ function askBasicCardInfo(choice) {
       message:'Type in Back text:'
     }
   ]).then(function (answers) {
+    //insatantiating basic card obj.
     var newBasicCard = new CardAdmin(answers.front, 
                                 answers.back,
                                 null, 
                                 null, 
                                 choice);
+    //add and show cards to user
     newBasicCard.addBasicCards();
     newBasicCard.showCards();
     addAnother();
@@ -72,11 +74,13 @@ function askClozeCardInfo(choice) {
       message:'Type in cloze text:'
     }
   ]).then(function (answers) {
+    //instantiating new cloze obj
     var newClozeCard = new CardAdmin(null, 
                                      null,
                                      answers.fullText,
                                      answers.cloze,
                                      choice);
+    //add and show cards to user.
     newClozeCard.addClozeCards();
     newClozeCard.showCards();
     addAnother();
